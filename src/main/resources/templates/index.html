@@ -3,9 +3,25 @@
 <head lang="en">
 	<title>Adopta</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script th:src="@{js/index.js}"></script>
 </head>
 <body>
-	<h1>Adopciones</h1>
-	<h2>Spring-boot y thymeleaf</h2>
+	<form action="/searchWithFilter">
+		<h1>Adopciones</h1>
+		<h2>Spring-boot y thymeleaf</h2>
+		<h3>Animal:</h3>
+		<input type="checkbox" id="checkDogs"/> Perros
+		<input type="checkbox" id="checkCats"/> Gatos
+		<h3>Tamaño</h3>
+		<input type="checkbox" id="checkSmall"/> Pequeño
+		<input type="checkbox" id="checkMiddle"/> Mediano
+		<input type="checkbox" id="checkBig"/> Grande
+		
+		<h3>Texto de búsqueda: </h3><input type="text" id="search"/> 
+		<span>
+			<input type="submit" value="Buscar" id="search"/>
+		</span>
+	</form>
 </body>
 </html>
