@@ -18,8 +18,6 @@ import com.develdroiders.enums.TypeAnimalsEnum;
 @RequestMapping("/searchWithFilter")
 public class SearchController {
 	
-	
-	
 	@RequestMapping(method=RequestMethod.GET)
     public @ResponseBody Animals searchWithFilter(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
