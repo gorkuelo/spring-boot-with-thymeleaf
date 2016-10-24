@@ -6,17 +6,22 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.develdroiders.beans.Animal;
 import com.develdroiders.beans.Animals;
 import com.develdroiders.enums.TypeAnimalsEnum;
 
 @Controller
+@RequestMapping("/searchWithFilter")
 public class SearchController {
 	
-	@RequestMapping("/searchWithFilter")
-    public Animals greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+	
+	
+	@RequestMapping(method=RequestMethod.GET)
+    public @ResponseBody Animals searchWithFilter(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         
         Animals result = new Animals();
